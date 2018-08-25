@@ -1,0 +1,188 @@
+@media print{
+    .noPrint{
+        display: none;
+    }
+    body{
+        background-image: none;
+    }
+}
+
+@-moz-document url-prefix() { 
+  .edit {
+     display: inline !important;
+  }
+}
+
+a:visited{
+    color:black;
+}
+img{
+    border: 10px groove rgb(255, 0, 0);
+    width: 200px;
+}
+body{
+    background-image: url("pics/paper.jpg");
+    background-position: center top;
+    background-size: 100% auto;
+    padding-bottom: 50px;
+}
+ @media screen and (max-width: 690px) {
+     ul{
+        position: relative !important;
+     }
+}
+
+h4{
+    font-family: sans-serif;
+}
+#search{
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+    width: 100%;
+    font-size: 15px;
+    background-color: transparent;
+}
+#AR{
+   float:right;
+}
+.openEdit{
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 10px;
+    color: black;
+    border: black 1px solid;
+    margin-left: 10px;
+    background-color:transparent;
+}
+.centered{
+    text-align: -moz-center;
+    text-align: -webkit-center;
+    
+}
+p em{
+    float:left;
+}
+.prehead{
+    font-family: cursive;
+    font-size: 30px;
+}
+a{
+    color: black;
+}
+h3{
+    font-family: sans-serif;
+}
+#stepbox{
+
+    border-top: solid black 1px;
+    border-radius: 50px;
+    border-bottom: solid black 1px;
+    margin-top: 20px;
+    
+}
+.bordered{
+     border-top: solid black 1px;
+     border-radius: 50px;
+    border-bottom: solid black 1px;
+}
+#step_buttons{
+    
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    border-style: hidden;
+    box-shadow: 0 0 0 1px black;
+    margin-bottom: 10px;
+}
+#step_buttons td{
+    border: solid 1px;
+}
+.delete{
+padding: 5px;
+font-size: 12px;
+border-radius: 10px;
+color: black;
+border: black 1px solid;
+margin-left: 10px;
+margin-top: 10px;
+width: 10%;
+min-width: 120px;
+    background-color:transparent;
+}
+ul li {
+    list-style-type: none;
+    font-family: cursive;
+}
+.show{
+
+    display: table !important;
+    
+}
+.bordered li{
+
+    list-style-type: none;
+    
+}
+.bordered li:before{
+
+   content: "- ";
+    
+}
+ul{
+    position: absolute;
+}
+strong {
+    color: black;
+    font-family: cursive;
+}
+table {
+    text-align: left;
+    display: none;
+}
+td {
+    padding: 5px;
+}
+th {
+    padding: 5px;
+}
+.source {
+    color: black;
+}
+.edit {
+    background-color: white;
+    padding: 0px 5px 0px 5px;
+    border-radius: 2px;
+    margin-left: 2px;
+    min-width: 10px;
+    display: inline-block;
+}
+.name {
+    display: inline-block;
+}
+.add {
+    color: black;
+    border: solid black 1px;
+    border-radius: 10px;
+    background-color: transparent;
+    font-size: 30px;
+    width: 100%;
+}
+.add:active{ 
+    box-shadow: 0px 0px;
+}
+.link {
+    border: none;
+    color: black;
+    font-size: 15px;
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+.link:hover {
+    cursor: pointer;
+}
+.del {color: black;border: solid black 1px;border-radius: 10px;/* min-width: 120px; */background-color: transparent;font-size: 30px;width: 100%;}
+.del:active{ 
+    box-shadow: 0px 0px;
+}

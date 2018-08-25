@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Family Recipe Book</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <link href='index.css' rel='stylesheet'>
+        <script src='js/jquery.min.js'></script>
+    </head>
+    <body>
+       <h3 id="AR"><strong><a href="nr.php">Add a recipe</a></strong></h3>
+        <h4 id="H">Family Recipe Book</h4>
+        
+        <input type='search' onkeyup="search(this.value)" placeholder="Search recipes" id='search'>
+        
+        <ul id="recipes">
+        </ul>
+        
+        <script>
+            function addslashes (str) {
+                return (str + '').replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
+            }
+            
+            var edit = function(id){
+                location.href='/edit?id='+id;
+            }
+            var view = function(id){
+                location.href='view.html?id='+id;
+            }
+            
+            function all(){
+                
+                $.ajax("http://localhost:8080/all", {
+                    type: "get",
+                    dataType: "json",
+                    success: function(data){
+                       var searchResults = data;
+                        var htmlResults = '';
+                        for(var i = 0; i <= searchResults.length-1; i++){
+                            htmlResults += '<li><input class="link" type="button" name="' + searchResults[i].recipe_id + '" onclick="view(this.name)" value="' + searchResults[i].recipe_name + '"></li>';
+                        }
+                        $("#recipes").html(htmlResults);
+                    } 
+                });
+                
+            }
+            
+            function search(str){
+                
+                if(str.length == 0){
+                    str = null;
+                }
+                $.ajax("http://localhost:8080/search/"+str, {
+                    type: "get",
+                    dataType: "json",
+                    success: function(data){
+                       var searchResults = data;
+                        var htmlResults = '';
+                        for(var i = 0; i <= searchResults.length-1; i++){
+                            htmlResults += '<li><input class="link" type="button" name="' + searchResults[i].recipe_id + '" onclick="view(this.name)" value="' + searchResults[i].recipe_name + '"></li>';
+                        }
+                        $("#recipes").html(htmlResults);
+                    } 
+                });
+                
+                
+            }
+            
+            $(document).ready(function(){
+               all(); 
+            });
+            
+        </script>
+    </body>
+</html>

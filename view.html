@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Family Recipe Book</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='index.css' rel='stylesheet'>
+        <script src='js/jquery.min.js'></script>
+    </head>
+    <body>
+       <h3 class='noPrint'  id="AR"><strong><a href="new.html">Add a recipe</a></strong></h3>
+        <h3 class='noPrint' ><a href='index.html'>Home</a></h3>
+        
+        <div id="rb">
+            <div class='recipeWrapper'>
+            <h3 id='recipe_name' name=''></h3>
+            <div class='centered'>  
+                <ul>
+                    <li>Time: 
+                        <span id="recipe_time"></span>
+                    </li>                
+                    <li>Serves: 
+                        <span id="recipe_yield"></span>
+                    </li>            
+                </ul>
+                <div class="bordered">
+                    <span class='prehead'>Ingredients</span>
+                    
+                    <table class='show'>
+                        <tr>
+                            <td id='firstPart'></td>
+                            <td id='secondPart'></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="stepbox">
+                    <span class='prehead'>Cooking Method</span>
+                </div>
+                <p>
+                    <em>
+                        Source:  
+                        <span class="source" id='recipe_source'>
+                        </span>
+                    </em>
+                </p>
+            </div>
+            <br><br>
+            <input type='button' id='edit_recipe' class='noPrint openEdit' onclick='edit(this.name)' name='' value='change this recipe'>
+            </div>
+        </div>
+        <script src='js/view.js'></script>
+    </body>
+</html>

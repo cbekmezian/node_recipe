@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href='index.css' rel='stylesheet'>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <script src='js/jquery.min.js'></script>
+        
+        <style>
+            #buttons{
+                display: table-row!important;
+            }
+            table{
+                
+                display: table !important;
+            }
+            
+            ul{
+                position: relative;
+            }
+            
+            #stepbox{
+                
+                border-radius: 0px;
+                
+                
+            }
+            
+        </style>
+        
+    </head>
+    <body>
+        <form id='upload' action="uploadr.php" method="post">
+            <input name='recipeHTML' type='text' style='display: none;' id='recipeHTML'>
+            <input type='button' value='Upload Recipe' onclick='upload()'>
+            <h2><input name='recipeName' id='name' class='name' type='text' placeholder='Enter Recipe Name Here' required></h2>
+        </form>
+       <div id='recipe'>
+
+            <ul>
+                <li>Time: <span  id="time" class='edit'></span></li>
+                <li>Serves: <span id="yield" class='edit'></span></li>
+            </ul>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ingredients</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody id='tableBod'>
+                    <tr id='1'>
+                        <td>
+                            <span class="edit"></span>
+                        </td>
+                        <td>
+                            <span class='edit'></span>
+                        </td>
+                    </tr>
+                    
+                    <tr id='buttons' style="display: none;">
+                        <td>
+                            <span class="fixed"><input type="button" value="+" onclick='addIngredient()' class='add'></span>
+                        </td>
+                        <td>
+                            <span class='fixed'><input type='button' id='delIngredient' value="-" class='del' onclick='delIngredient()'></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id='stepbox'>
+                <p id='step1'><strong>Step 1: </strong><span name="1" class='edit'></span></p>
+                
+                <table id='step_buttons'>
+                    <tr>
+                        <td>
+                            <input type='button' value='+' style='border: none;' class='add' onclick='addStep()'>
+                        </td>
+                        <td  id='delStep' style='display: none;'>
+                             <input type='button' style='border: none;'  value='-' class='del' onclick='delStep()'>
+                        </td>
+                    </tr>
+                </table>
+                
+            </div>
+            <p><em>Source:  <span id="source" class='edit'></span></em></p>
+        </div>
+        
+        
+        <script src='js/new.js'></script>
+    </body>
+</html>
